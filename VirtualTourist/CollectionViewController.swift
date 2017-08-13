@@ -157,8 +157,13 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
 	
 	/// perform a Photo fetch request to certain Pin
 	private func performPhotosFetch() {
+		
+		//  @nonobjc public class func fetchRequest() -> NSFetchRequest<Photo> {
+		//return NSFetchRequest<Photo>(entityName: "Photo")
+	//}
 		let fetchRequest:NSFetchRequest<Photo> = Photo.fetchRequest()
 		fetchRequest.predicate = NSPredicate(format: "pin == %@", currentPin)
+		// fetchRequest:NSFetchRequest<Photo> = NSFetchRequest<Photo>(entityName: "Photo")
 		
 		do {
 
